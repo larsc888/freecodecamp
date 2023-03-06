@@ -21,6 +21,12 @@ app.get("/", function (req, res) {
 // your first API endpoint... 
 app.get("/api/:date?", function (req, res) {
   let timestamp = req.params['date'];
+
+  // If API Empty
+  if (req.params['date'] === undefined) {
+    let date = new Date();
+    res.json({unix: date.getTime(), utc: date.toUTCString()}); 
+  }
   
   // Convert unix timestamp into argument Date can accept  ("Thu, 01 Jan 1970 00:00:00 GMT")
   if (/^[0-9]{13}$/.test(`${timestamp}`)) {
@@ -32,7 +38,7 @@ app.get("/api/:date?", function (req, res) {
   timestamp = Date.parse(timestamp);
   if (isNaN(timestamp) == false) {
     let date = new Date(req.params['date']);
-    res.json({unit: date.getTime()});    
+    res.json({unix: date.getTime(), utc: date.toUTCString()});    
   }
   else {
     res.json({ error : "Invalid Date" });
