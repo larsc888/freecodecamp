@@ -1,0 +1,92 @@
+:root {
+  --body-bg-color: #FFF;
+  --chart-bg-color: #FFF;
+}
+  
+body {
+  background-color: var(--body-bg-color);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-child {
+  background-color: var(--chart-bg-color);
+}
+
+#treemap {
+  position: relative;
+  width: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+svg {
+  background-color: var(--chart-bg-color);
+  margin: 0 auto;
+}
+
+
+#tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 204, 0.9);
+  box-shadow: 1px 1px 10px;
+  /* 
+  border-radius: 10%; 
+  min-width: 150px;
+  min-height: 70px;
+  
+  */
+  pointer-events: none;
+  color: #fff;
+}
+
+#tooltip div {
+  margin: 5px 0;
+}
+
+#y-axis path {
+  stroke: black;
+  stroke-width: 1;
+  fill: none;
+}
+
+#x-axis path {
+  stroke: black;
+  stroke-width: 1;
+  fill: none;
+}
+
+.info {
+  font-size: 0.8em;
+}
+#name {
+  margin-bottom: 5px;
+}
+
+#year {
+  margin-right: 10px; 
+}
+
+#legend {
+  margin-top: 10px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+text {
+  word-wrap: break-word;
+}
+
+nav {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 15px;
+}
