@@ -31,7 +31,7 @@ app.get("/api/:date?", function (req, res) {
   // Convert unix timestamp into argument Date can accept  ("Thu, 01 Jan 1970 00:00:00 GMT")
   if (/^[0-9]{13}$/.test(`${timestamp}`)) {
     let date = new Date(Number(timestamp));
-    res.json({unix: timestamp, utc: date.toUTCString() }); 
+    res.json({unix: date.getTime(), utc: date.toUTCString() }); 
   }
   
   // Check if timestamp is valid
